@@ -1,12 +1,12 @@
 Summary:	Morse code tutor
 Summary(pl):	Program do nauki alfabetu Morse'a
 Name:		aldo
-Version:	0.0.12
+Version:	0.6.3
 Release:	2
 License:	GPL
 Group:		Applications
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
-#Source0-MD5:	e0c793915e131f34ea7a7a94a173350e
+# Source0-md5:	7548bed9282f4581858648236a9ac5e0
 Patch0:		%{name}-DESTDIR.patch
 URL:		http://aldo.sourceforge.net
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -21,7 +21,7 @@ poziomów trudno¶ci i 4 prêdko¶ci. Wybierz odpowiedni poziom i
 prêdko¶æ by zacz±æ æwiczyæ telegrafiê.
 
 %prep
-%setup -q -n %{name}.%{version}
+%setup -q
 %patch0 -p1
 
 %build
@@ -34,12 +34,10 @@ install -d $RPM_BUILD_ROOT%{_bindir}
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%find_lang %{name}
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -f %{name}.lang
+%files
 %defattr(644,root,root,755)
 %doc ChangeLog README
 %attr(755,root,root) %{_bindir}/*

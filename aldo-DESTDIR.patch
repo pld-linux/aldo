@@ -1,38 +1,33 @@
-diff -urN aldo.0.0.12/Makefile aldo/Makefile
---- aldo.0.0.12/Makefile	Wed Jul 23 00:54:21 2003
-+++ aldo/Makefile	Mon Aug  4 12:55:36 2003
-@@ -59,10 +59,7 @@
+diff -urN aldo-0.6.3-orig/libdatafile/Makefile aldo-0.6.3/libdatafile/Makefile
+--- aldo-0.6.3-orig/libdatafile/Makefile	2003-04-09 11:30:24.000000000 +0200
++++ aldo-0.6.3/libdatafile/Makefile	2004-01-30 16:59:11.000000000 +0100
+@@ -20,9 +20,9 @@
+ 	@rm -f $(OBJECTS) $(PACKAGE)
+ 
+ install: all
+-	rm -Rf /usr/include/datafile
+-	mkdir /usr/include/datafile
+-	cp $(HEADERS) /usr/include/datafile
+-	cp lib/$(NAMELIB) /usr/lib/libdatafile.so
+-	ldconfig
++	rm -Rf $(DESTDIR)/usr/include/datafile
++	mkdir $(DESTDIR)/usr/include/datafile
++	cp $(HEADERS) $(DESTDIR)/usr/include/datafile
++	cp lib/$(NAMELIB) $(DESTDIR)/usr/lib/libdatafile.so
++#	ldconfig
+ 	@echo type 'make clean'
+diff -urN aldo-0.6.3-orig/Makefile aldo-0.6.3/Makefile
+--- aldo-0.6.3-orig/Makefile	2003-11-20 21:56:49.000000000 +0100
++++ aldo-0.6.3/Makefile	2004-01-30 16:57:03.000000000 +0100
+@@ -63,9 +63,6 @@
  clean_aldo:
  	@$(RM) aldo $(OBJECTS)
  
 -install: libs aldo uninstall
++install: libs aldo
+ 	@strip aldo
 -	@install -m555 -oroot aldo /usr/bin/
-+install: libs aldo 
-+	@install -m555 aldo $(DESTDIR)/usr/bin/
- 	@$(MAKE) -C po install
- 
+-
 -uninstall:
 -	@$(RM) /usr/bin/aldo
--	@$(MAKE) -C po uninstall
-\ No newline at end of file
-diff -urN aldo.0.0.12/po/Makefile aldo/po/Makefile
---- aldo.0.0.12/po/Makefile	Sun Jun  8 16:32:31 2003
-+++ aldo/po/Makefile	Mon Aug  4 12:55:43 2003
-@@ -16,13 +16,8 @@
- install: $(CATALOGS)
- 	@for n in $(CATALOGS); do \
- 	    l=`basename $$n .mo`; \
--	    $(INSTALL) -m755 -d $(INSTALLNLSDIR)/$$l; \
--	    $(INSTALL) -m755 -d $(INSTALLNLSDIR)/$$l/LC_MESSAGES; \
--	    $(INSTALL) -m644 $$n $(INSTALLNLSDIR)/$$l/LC_MESSAGES/$(PACKAGE).mo; \
-+	    $(INSTALL) -m755 -d $(DESTDIR)$(INSTALLNLSDIR)/$$l; \
-+	    $(INSTALL) -m755 -d $(DESTDIR)$(INSTALLNLSDIR)/$$l/LC_MESSAGES; \
-+	    $(INSTALL) -m644 $$n $(DESTDIR)$(INSTALLNLSDIR)/$$l/LC_MESSAGES/$(PACKAGE).mo; \
- 	done
- 
--uninstall:
--	@for n in $(CATALOGS); do \
--	    l=`basename $$n .mo`; \
--	    $(RM) $(INSTALLNLSDIR)/$$l/LC_MESSAGES/$(PACKAGE).mo; \
--	done
-\ No newline at end of file
++	@install aldo $(DESTDIR)/usr/bin/
