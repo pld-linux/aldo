@@ -16,10 +16,10 @@ ALDO is a morse tutor with 6 skill levels and 4 speeds.
 Select the proper skill/speed to begin practicing cw.
 
 %description -l pl
-ALDO to program do nauki alfabetu Morse'a. Posiada 6 
+ALDO to program do nauki alfabetu Morse'a. Posiada 6
 poziomów trudno¶ci i 4 prêdko¶ci. Wybierz odpowiedni poziom i
 prêdko¶æ by zacz±æ æwiczyæ telegrafiê.
- 
+
 %prep
 %setup -q -n %{name}.%{version}
 %patch0 -p1
