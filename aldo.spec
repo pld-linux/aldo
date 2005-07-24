@@ -8,7 +8,7 @@ Group:		Applications
 Source0:	http://dl.sourceforge.net/aldo/%{name}-%{version}.tar.bz2
 # Source0-md5:	7548bed9282f4581858648236a9ac5e0
 Patch0:		%{name}-DESTDIR.patch
-URL:		http://aldo.sourceforge.net/
+URL:		http://www.nongnu.org/aldo/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
