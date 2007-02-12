@@ -1,5 +1,5 @@
 Summary:	Morse code tutor
-Summary(pl):	Program do nauki alfabetu Morse'a
+Summary(pl.UTF-8):   Program do nauki alfabetu Morse'a
 Name:		aldo
 Version:	0.6.3
 Release:	2
@@ -15,10 +15,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 ALDO is a morse tutor with 6 skill levels and 4 speeds. Select the
 proper skill/speed to begin practicing cw.
 
-%description -l pl
-ALDO to program do nauki alfabetu Morse'a. Posiada 6 poziomów
-trudno¶ci i 4 prêdko¶ci. Wystarczy wybraæ odpowiedni poziom i prêdko¶æ
-aby zacz±æ æwiczyæ telegrafiê.
+%description -l pl.UTF-8
+ALDO to program do nauki alfabetu Morse'a. Posiada 6 poziomÃ³w
+trudnoÅ›ci i 4 prÄ™dkoÅ›ci. Wystarczy wybraÄ‡ odpowiedni poziom i prÄ™dkoÅ›Ä‡
+aby zaczÄ…Ä‡ Ä‡wiczyÄ‡ telegrafiÄ™.
 
 %prep
 %setup -q
