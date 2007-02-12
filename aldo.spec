@@ -1,5 +1,5 @@
 Summary:	Morse code tutor
-Summary(pl.UTF-8):   Program do nauki alfabetu Morse'a
+Summary(pl.UTF-8):	Program do nauki alfabetu Morse'a
 Name:		aldo
 Version:	0.6.3
 Release:	2
