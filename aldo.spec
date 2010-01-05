@@ -1,13 +1,15 @@
 Summary:	Morse code tutor
 Summary(pl.UTF-8):	Program do nauki alfabetu Morse'a
 Name:		aldo
-Version:	0.6.3
-Release:	2
+Version:	0.7.5
+Release:	1
 License:	GPL
 Group:		Applications
-Source0:	http://dl.sourceforge.net/aldo/%{name}-%{version}.tar.bz2
-# Source0-md5:	7548bed9282f4581858648236a9ac5e0
-Patch0:		%{name}-DESTDIR.patch
+Source0:	http://savannah.nongnu.org/download/aldo/%{name}-%{version}.tar.bz2
+# Source0-md5:	c429c6a24addfcfae0c41b4bf3d858d5
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libao-devel
 URL:		http://www.nongnu.org/aldo/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -22,14 +24,17 @@ aby zacząć ćwiczyć telegrafię.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
+%{__aclocal}
+%{__autoconf}
+%{__autoheader}
+%{__automake}
+%configure
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_bindir}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
@@ -39,5 +44,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog README
+%doc AUTHORS ChangeLog NEWS README THANKS
 %attr(755,root,root) %{_bindir}/*
+%{_mandir}/man1/%{name}.1*
