@@ -6,11 +6,11 @@ Release:	1
 License:	GPL
 Group:		Applications
 Source0:	http://savannah.nongnu.org/download/aldo/%{name}-%{version}.tar.bz2
-# Source0-md5:	c429c6a24addfcfae0c41b4bf3d858d5
+# Source0-md5:	385eaec5a6d293195aa5fa6a00b1cfcf
+URL:		http://www.nongnu.org/aldo/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libao-devel
-URL:		http://www.nongnu.org/aldo/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
