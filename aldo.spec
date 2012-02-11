@@ -1,12 +1,12 @@
 Summary:	Morse code tutor
 Summary(pl.UTF-8):	Program do nauki alfabetu Morse'a
 Name:		aldo
-Version:	0.7.5
-Release:	2
+Version:	0.7.6
+Release:	1
 License:	GPL
 Group:		Applications
 Source0:	http://savannah.nongnu.org/download/aldo/%{name}-%{version}.tar.bz2
-# Source0-md5:	385eaec5a6d293195aa5fa6a00b1cfcf
+# Source0-md5:	c870b62fe50f71eb6c7ddcd5d666d2e2
 URL:		http://www.nongnu.org/aldo/
 BuildRequires:	autoconf
 BuildRequires:	automake
